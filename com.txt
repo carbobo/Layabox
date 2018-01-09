@@ -1,0 +1,51 @@
+安装node稳定版本。
+...Laya文件夹下存放的是项目在开发运行中的一些配置信息
+bin 项目的输出目录。bin/js 项目中ts编译成的js文件。
+bin/libs 引擎模板的js文件。需要哪个，再index.html里引入哪个。
+laya 存放UI项目。
+laya/assets 资源，组件。图片。
+laya/pages LayaIDE创建的布局文件。皮肤。
+.d.ts代码提供文件目录。代码提示。
+src 项目的代码目录。
+tsconfig.json ts工程的配置文件。
+类下面是方法， 不能声明变量，
+
+原生组件的属性，特性 。
+namespace 将程序库名称封装起来。在各个程序库之间建立一道道围墙。
+
+Qinghu@2017  wifi密码
+btn点击开始按钮，事件监听，设置按钮字体 ，状态变化。运行管理页面的爪子手臂动画。
+手臂动画： 获取dom的引用。设置定时器，移动爪子。
+手臂的y值>520时候。清除定时器
+定时器。爪子的高度 += 100；绳子拉长，高度+=100；
+创建布偶，设置定时器。布偶移动 小于-500时，清除定时器，然后重建一个布偶 
+爪子到达底部并且 doll娃娃的x坐标在一定区间，表示抓到娃娃。调用碰撞动画。
+弹框的封装：
+弹框界面，弹框的ts放在common （访问方法app.common.弹框类）；
+接收两个值，是否变灰色，弹框文字提示。
+播放音乐： import SoundManager = Laya.SoundManager;
+ SoundManager.playSound("sounds/btn.mp3", 1, new Handler(this, this.onComplete));
+playMusic()
+rotation += 1 旋转。。。
+
+ private onApePress(e: Event): void {
+  
+    // 鼠标按下后，HOLD_TRIGGER_TIME毫秒后hold
+            
+    Laya.timer.once(1000, this, this.onHold);
+            
+    Laya.stage.on(Event.MOUSE_UP, this, this.onApeRelease);
+    
+  }
+startDrag  拖拽。this.ape.startDrag(this.dragRegion, true, 100);
+数据结构
+每一个namespace有一个管理类。
+前端项目大概会经历以下这些阶段：
+1. 整体渲染
+2. 结构行为表现分离
+3. 隔离逻辑单元
+4. 插件
+5. 模块
+6. 前端MVC/MVVM
+7. 组件
+
